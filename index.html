@@ -1,9 +1,160 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>CaptainBTC</title>
+    <title>CaptainBTC</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            background-color: #ffffff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            opacity: 0.3;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        nav {
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        nav a:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+            color: #fff;
+            opacity: 0.7;
+        }
+
+        .container h2 {
+            margin: 0;
+            margin-bottom: 10px;
+        }
+
+        .card {
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            color: #ffffff;
+            margin: 0;
+            margin-bottom: 10px;
+            opacity: 0.7;
+        }
+
+        .card p {
+            margin: 0;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #fff;
+            color: #333;
+            cursor: pointer;
+        }
+
+        #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+    </style>
 </head>
+
 <body>
-	<img src="captainbtc.jpg">
+    <video autoplay muted loop id="myVideo">
+        <source src="down.mp4" type="video/mp4">
+    </video>
+
+    <header>
+        <img src="captainbtc.jpg" alt="CaptainBTC Logo"
+            style="width: 50px; height: 50px; margin-right: 10px; border-radius: 50%;">
+        <h1>CaptainBTC</h1>
+    </header>
+
+    <!-- <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav> -->
+
+    <div class="container">
+        <h2>Welcome to our website</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut diam eu lorem venenatis mattis vel in nisl.
+            Nam consequat erat velit, ut luctus eros sollicitudin in. Fusce sed tortor vel augue interdum tempor nec at
+            elit. Fusce nec mi urna. </p>
+        <div class="card">
+            <h3>Our Services</h3>
+            <p>We offer a range of financial services to help you achieve your goals:</p>
+            <ul>
+                <li>Investment Management</li>
+                <li>Tax Planning</li>
+                <li>Retirement Planning</ <li>Financial Planning</li>
+                <li>Insurance</li>
+            </ul>
+            <a href="#" class="btn">Learn More</a>
+        </div>
+        <div class="card">
+            <h3>Meet Our Team</h3>
+            <p>We have a team of experienced professionals ready to assist you:</p>
+            <ul>
+                <li>John Smith, Financial Advisor</li>
+                <li>Jane Doe, Tax Specialist</li>
+                <li>Bob Johnson, Retirement Planner</li>
+            </ul>
+            <a href="#" class="btn">Meet the Team</a>
+        </div>
+    </div>
+    <footer style="text-align: center;">
+        <p>&copy; 2023 My Simple Finance Website.</p>
+    </footer>
 </body>
+
 </html>
