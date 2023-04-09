@@ -2,196 +2,243 @@
 <html>
 
 <head>
-    <title>CaptainBTC</title>
+    <title>BTCGPT</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">    
-    <style>
-        body {
-            font-family: 'Open Sans', sans-serif;
-            font-size: 16px;
-            line-height: 1.5;
-            background-color: #ffffff;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
+    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap">
 
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            opacity: 0.3;
-        }
 
-        h1 {
-            font-size: 2rem;
-            margin: 0;
-        }
-
-        nav {
-            background-color: #f1f1f1;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            color: #333;
-            text-decoration: none;
-            padding: 10px;
-        }
-
-        nav a:hover {
-            background-color: #333;
-            color: #fff;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            box-sizing: border-box;
-            color: #fff;
-            opacity: 0.7;
-        }
-
-        .container h2 {
-            margin: 0;
-            margin-bottom: 10px;
-        }
-
-        .card {
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            padding: 20px;
-        }
-
-        .card h3 {
-            font-size: 1.2rem;
-            color: #ffffff;
-            margin: 0;
-            margin-bottom: 10px;
-            opacity: 0.7;
-        }
-
-        .card p {
-            margin: 0;
-            margin-bottom: 10px;
-        }
-
-        .btn {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-
-        .btn:hover {
-            background-color: #fff;
-            color: #333;
-            cursor: pointer;
-        }
-
-        #myVideo {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
-            z-index: -1;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-    <video autoplay loop muted playsinline id="myVideo">  
-        <source src="down.mp4" type="video/mp4">
+    <video autoplay loop muted playsinline id="myVideo">
+        <source src="./video/up.mp4" type="video/mp4">
     </video>
 
     <header>
-        <img src="captainbtc.jpg" alt="CaptainBTC Logo"
-            style="width: 50px; height: 50px; margin-right: 10px; border-radius: 50%;">
-        <h1>CaptainBTC</h1>
+        <img src="./images/btc.png" alt="Bitcoin" style="width: 60px; height: 60px; margin-right: 0px; border-radius: 50%;">
+        <h1>BTCGPT</h1>
+        <h1>🚀🌕</h1>
     </header>
 
-    <!-- <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
-    </nav> -->
+    
 
-    <div class="container">
-        <h2>Welcome to our website</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut diam eu lorem venenatis mattis vel in nisl.
-            Nam consequat erat velit, ut luctus eros sollicitudin in. Fusce sed tortor vel augue interdum tempor nec at
-            elit. Fusce nec mi urna. </p>
+    <div id="id_container" class="container">
+
         <div class="card">
-            <h3>Our Services</h3>
-            <p>We offer a range of financial services to help you achieve your goals:</p>
-            <ul>
-                <li>Investment Management</li>
-                <li>Tax Planning</li>
-                <li>Retirement Planning</ <li>Financial Planning</li>
-                <li>Insurance</li>
-            </ul>
-            <a href="#" class="btn">Learn More</a>
+            <p>Daily Forecast: Tomorrow</p>
+            <!-- <p>
+                <span class="percentUp">+1.0%</span>
+                <span class="datetime2">tomorrow</span>
+            </p> -->
+            <p>
+                <span class="priceUp">$31,000</span>
+                <span class="percentUp">+1.0%</span>
+            </p>
+            <h4 class="bottom"><span class="datetimeUp">2023-04-10 00:00 UTC, tomorrow</span></h4>
+
+            <p>
+                <span class="price">$31,000</span>
+            </p>
+            <h4 class="bottom"><span class="datetime">2023-04-09 00:00 UTC, now</span></h4>
+            
+
+        </div>
+
+        <div class="card">
+            <p>Daily Forecast: Next 30 Days</p>
+            <canvas class="chart" id="myChart1" height="200"></canvas>
         </div>
         <div class="card">
-            <h3>Meet Our Team</h3>
-            <p>We have a team of experienced professionals ready to assist you:</p>
-            <ul>
-                <li>John Smith, Financial Advisor</li>
-                <li>Jane Doe, Tax Specialist</li>
-                <li>Bob Johnson, Retirement Planner</li>
-            </ul>
-            <a href="#" class="btn">Meet the Team</a>
+            <p>Daily Forecast: Average Directional Accuracy</p>
+            <canvas class="chart" id="myChart2" height="120"></canvas>
         </div>
+
+        <div class="card">
+            <p>
+                <span class="sm_text">
+                    BTCGPT is a deep learning model that predicts the future price of Bitcoin based on past Bitcoin prices, as well as other relevant data such as trading volumes, market capitalization, and news sentiment analysis. These models are typically trained using historical data and fine-tuned with more recent data to improve their accuracy.
+                    It is important to note that while these models may provide valuable insights, they are not foolproof and cannot predict the future with complete certainty. Market conditions, economic factors, and other unpredictable variables can impact the price of Bitcoin and other assets. Therefore, it is recommended that investors use BTCGPT's predictions as just one tool to inform their investment decisions and always conduct their own research before making any investment decisions.
+                </span>
+                <span class="notice">
+                    This site does not recommend any investment and all risks arising from the use of information on this site
+                    are the responsibility of the investor.
+                </span>
+            </p>   
+        </div>
+
     </div>
-    <footer style="text-align: center;">
-        <p>&copy; 2023 My Simple Finance Website.</p>
+    <footer class="sm_text" style="text-align: center;">
+        &copy; 2023 BTCGPT.COM
     </footer>
-    
-    
-  <canvas id="myChart"></canvas>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>    
-  <script>
-    // Fetch the JSON data from the file
-    fetch("./output.json")
-      .then(response => response.json())
-      .then(data => {
-        // Extract the labels and values from the data
-        const labels = data.dates;
-        const values = data.actual_price;
 
-        // Create a Chart.js chart using the data
-        const ctx = document.getElementById('myChart').getContext('2d');
-        const chart = new Chart(ctx, {
-          type: 'bar',
-          data: {
-            labels: labels,
-            datasets: [{
-              label: 'Chart Data',
-              data: values,
-              backgroundColor: 'rgba(255, 99, 132, 0.2)',
-              borderColor: 'rgba(255, 99, 132, 1)',
-              borderWidth: 1
-            }]
-          },
-          options: {
-            scales: {
-              y: {
-                beginAtZero: true
-              }
-            }
-          }
-        });
-      });
-  </script>    
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script> -->
+
+
+    <script>
+        // Fetch the JSON data from the file
+        fetch("./output.json")
+            .then(response => response.json())
+            .then(data => {
+                // var lastTen = myList.slice(-10);
+
+                // const size = list.length;
+
+                // const series1 = data.dates.slice(0, data.actual_price.length).map((date, index) => ({
+                //     x: new Date(date),
+                //     y: data.actual_price[index]
+                // }));
+
+                // const series2 = data.dates.slice(0, data.predicted_price.length).map((date, index) => ({
+                //     x: new Date(date),
+                //     y: data.predicted_price[index]
+                // }));
+
+                Chart.defaults.color = "white";
+
+                const ctx1 = document.getElementById('myChart1').getContext('2d');
+                const chart1 = new Chart(ctx1, {
+                    type: 'line',
+                    data: {
+                        //labels: data.dates.slice(-10),
+                        datasets: [{
+                            label: 'Actual Price',
+                            data: data.actual,
+                            fill: true,
+                            borderWidth: 1,
+                            // pointBackgroundColor: function (context) {
+                            //     if (context.dataIndex === 0) {
+                            //         return 'black';
+                            //     } else {
+                            //         return 'lightblue';
+                            //     }
+                            // },
+                            
+                        },
+                        {
+                            label: 'Predicted Price (Past)',
+                            data: data.pred_1,
+                            //fill: true,
+                            borderWidth: 1,
+                        },
+                        {
+                            label: 'Predicted Price (Next 30 Days)',
+                            data: data.pred_2,
+                            fill: true,
+                            borderWidth: 1,
+                            // pointBackgroundColor: function (context) {
+                            //     if (context.dataIndex === 0) {
+                            //         return 'lightred';
+                            //     } else {
+                            //         return 'lightblue';
+                            //     }
+                            // },
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            x: {
+                                ticks: {
+                                    font: {
+                                        size: 8
+                                    }
+                                }
+                            },
+                            y: {
+                                ticks: {
+                                    font: {
+                                        size: 8
+                                    }
+                                }
+                            },                            
+                        },
+                        plugins: {
+                            title: {
+                                //display: true,
+                                //text: 'Next 10 Days',
+                            }
+                        }                        
+                    }
+                });
+
+                // Create a new array with the same length as x
+                var temp = new Array(data.direction_acc.length);
+
+                // Populate the new array with integers from 0 to n-1
+                for (var i = 0; i < temp.length; i++) {
+                    temp[i] = i;
+                }
+
+                // Create a Chart.js chart using the data
+                const ctx2 = document.getElementById('myChart2').getContext('2d');
+                const chart2 = new Chart(ctx2, {
+                    type: 'line',
+                    data: {
+                        //labels: data.dates.slice(-300),
+                        labels: temp,
+                        datasets: [{
+                            label: 'MA:5D',
+                            data: data.direction_acc,
+                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 1,
+                            pointStyle: false,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        scales: {
+
+                            x: {
+                                grid: {
+                                    display: false
+                                },
+                                ticks: {
+                                    font: {
+                                        color: 'white',
+                                        size: 8
+                                    }
+                                },
+                                display: false
+                            },
+                            y: {
+                                grid: {
+                                    display: false
+                                },
+                                ticks: {
+                                    font: {
+                                        size: 8
+                                    }
+                                },
+                                max: 1.0,
+                                min: 0                                
+                            },                            
+                        },
+                        plugins: {
+                            title: {
+                                display: false,
+                                // text: '5D,MA',
+                            }
+                        }                        
+                    }
+                })
+
+                const container = document.getElementById('id_container');
+                const resizeObserver = new ResizeObserver(() => {
+                    chart1.resize();
+                    chart2.resize();
+                });
+                resizeObserver.observe(container);
+
+            })
+
+
+    </script>
+
 </body>
 
 </html>
